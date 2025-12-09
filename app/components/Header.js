@@ -217,14 +217,20 @@ export default function Header() {
                   {item.label}
                 </Link>
                 {item.dropdown && (
-                  <ul className="pl-4 mb-2">
-                    {item.dropdown.map((dropItem) => (
-                      <li key={dropItem} className="py-1">
-                        {dropItem}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+  <ul className="pl-4 mb-2">
+    {item.dropdown.map((dropItem) => (
+      <li key={dropItem.label} className="py-1">
+        <Link
+          href={dropItem.href}
+          className="block py-2 hover:text-[#8A0B36] hover:bg-amber-50 rounded"
+        >
+          {dropItem.label}
+        </Link>
+      </li>
+    ))}
+  </ul>
+)}
+
               </div>
             ))}
           </div>
